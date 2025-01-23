@@ -1,4 +1,5 @@
 import type { Animal } from "@/types";
+import { prisma } from "@/utils/prisma";
 
 const animals: Animal[] = [
   { id: "1", name: "Dog" },
@@ -8,7 +9,10 @@ const animals: Animal[] = [
   { id: "5", name: "Horse" },
 ];
 
-export function GET() {
+export async function GET() {
+  const data = await prisma.user.count();
+  console.log(data);
+
   return new Response(JSON.stringify(animals), {
     headers: { "content-type": "application/json" },
   });
