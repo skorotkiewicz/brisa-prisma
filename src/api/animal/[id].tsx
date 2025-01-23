@@ -50,7 +50,7 @@ const animalsByIndex = animals.reduce(
 export function GET(request: RequestContext) {
   const id = request.route.params?.id as string;
 
-  return new Response(JSON.stringify(animalsByIndex[id]), {
+  return new Response(JSON.stringify(animalsByIndex[id] || "not found"), {
     headers: { "content-type": "application/json" },
   });
 }
