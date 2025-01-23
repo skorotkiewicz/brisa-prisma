@@ -1,0 +1,19 @@
+{
+  "name": "brisa",
+  "module": "src/pages/index.tsx",
+  "type": "module",
+  "scripts": {
+    "dev": "brisa dev",
+    "dev:debug": "brisa dev --debug",
+    "build": "brisa build",
+    "start": "brisa start"
+  },
+  "dependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "brisa": "0.2.3"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}
