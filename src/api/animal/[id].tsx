@@ -1,56 +1,27 @@
-import type { AnimalInfo } from "@/types";
 import type { RequestContext } from "brisa";
+import { prisma } from "@/utils/prisma";
+import { send } from "@/utils/response";
 
-const animals: AnimalInfo[] = [
-  {
-    id: "1",
-    name: "Dog",
-    hasTail: true,
-    abilities: ["bark", "run"],
-    image: "/images/dog.avif",
-  },
-  {
-    id: "2",
-    name: "Cat",
-    hasTail: true,
-    abilities: ["meow", "climb"],
-    image: "/images/cat.avif",
-  },
-  {
-    id: "3",
-    name: "Bird",
-    hasTail: false,
-    abilities: ["fly", "sing"],
-    image: "/images/bird.avif",
-  },
-  {
-    id: "4",
-    name: "Fish",
-    hasTail: true,
-    abilities: ["swim"],
-    image: "/images/fish.avif",
-  },
-  {
-    id: "5",
-    name: "Horse",
-    hasTail: true,
-    abilities: ["run"],
-    image: "/images/horse.avif",
-  },
-];
+export async function GET(request: RequestContext) {
+  try {
+    const id = Number(request.route.params?.id as string);
 
-const animalsByIndex = animals.reduce(
-  (acc, animal) => {
-    acc[animal.id] = animal;
-    return acc;
-  },
-  {} as Record<string, AnimalInfo>,
-);
+    const animal = await prisma.animal.findUnique({
+      where: { id },
+      include: { abilities: true },
+    });
 
-export function GET(request: RequestContext) {
-  const id = request.route.params?.id as string;
+    if (!animal) {
+      return send(404, { error: "Animal not found" });
+    }
 
-  return new Response(JSON.stringify(animalsByIndex[id] || "not found"), {
-    headers: { "content-type": "application/json" },
-  });
+    const formattedAnimal = {
+      ...animal,
+      abilities: animal.abilities.map((ability) => ability.abilitie),
+    };
+
+    return send(200, formattedAnimal);
+  } catch (error) {
+    return send(500, { error: "Failed to fetch animal" });
+  }
 }

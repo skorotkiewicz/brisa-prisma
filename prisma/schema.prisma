@@ -23,3 +23,18 @@ model Message {
     user      User     @relation(fields: [userId], references: [id])
     createdAt DateTime @default(now())
 }
+
+model Animal {
+    id        Int        @id @default(autoincrement())
+    name      String
+    hasTail   Boolean
+    image     String
+    abilities Abilitie[]
+}
+
+model Abilitie {
+    id       Int    @id @default(autoincrement())
+    abilitie String
+    animal   Animal @relation(fields: [animalId], references: [id])
+    animalId Int
+}

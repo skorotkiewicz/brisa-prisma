@@ -28,6 +28,7 @@ export default function Layout({ children }: { children: JSX.Element }) {
         <link href="/assets/style.css" rel="stylesheet" />
         <link href="/assets/nav.css" rel="stylesheet" />
         <link href="/assets/footer.css" rel="stylesheet" />
+        <link href="/assets/admin.css" rel="stylesheet" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>

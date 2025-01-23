@@ -1,19 +1,13 @@
-import type { Animal } from "@/types";
 import { prisma } from "@/utils/prisma";
-
-const animals: Animal[] = [
-  { id: "1", name: "Dog" },
-  { id: "2", name: "Cat" },
-  { id: "3", name: "Bird" },
-  { id: "4", name: "Fish" },
-  { id: "5", name: "Horse" },
-];
+import { send } from "@/utils/response";
 
 export async function GET() {
-  const data = await prisma.user.count();
-  console.log(data);
-
-  return new Response(JSON.stringify(animals), {
-    headers: { "content-type": "application/json" },
+  const animals = await prisma.animal.findMany({
+    select: {
+      id: true,
+      name: true,
+    },
   });
+
+  return send(200, animals);
 }

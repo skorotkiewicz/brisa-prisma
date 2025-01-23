@@ -14,6 +14,7 @@ export default function Homepage() {
       <section class="counter-section">
         <h2>Counters</h2>
         <div class="counters">
+          <choose-animal />
           <counter-client initialValue={42} />
           <CounterServer initialValue={37} />
         </div>

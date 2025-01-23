@@ -16,6 +16,9 @@ export default function Nav() {
             <a href="/">Home</a>
           </li>
           <li>
+            <a href="/admin">Admin</a>
+          </li>
+          <li>
             <a href="/about">About Brisa</a>
           </li>
         </ul>

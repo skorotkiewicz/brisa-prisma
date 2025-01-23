@@ -1,0 +1,73 @@
+.admin-animal-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-animal-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.admin-animal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-form-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.admin-form-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.admin-form-checkbox {
+  margin-right: 10px;
+}
+
+.admin-form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.admin-form-submit,
+.admin-form-delete {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-form-submit {
+  background-color: #4caf50;
+  color: white;
+}
+
+.admin-form-submit:hover {
+  background-color: #45a049;
+}
+
+.admin-form-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.admin-form-delete:hover {
+  background-color: #d32f2f;
+}
