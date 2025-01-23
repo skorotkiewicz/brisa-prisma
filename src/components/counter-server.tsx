@@ -24,18 +24,14 @@ export default function CounterServer({
           data-value={initialValue}
           class="increment-button"
           onClick={increment}
-        >
-          +
-        </button>
+        />
         <div class="counter-value">{initialValue}</div>
         <button
           type="button"
           data-value={initialValue}
           class="decrement-button"
           onClick={decrement}
-        >
-          -
-        </button>
+        />
       </div>
     </div>
   );

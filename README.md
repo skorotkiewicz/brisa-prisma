@@ -28,3 +28,11 @@ bun build
 bun start
 ```
 
+        <button
+          type="button"
+          onDblClick={() => {
+            console.log("Double click fired");
+          }}
+        >
+          xxxx
+        </button>

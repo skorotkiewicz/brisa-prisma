@@ -14,17 +14,13 @@ export default function Counter(
           type="button"
           class="increment-button"
           onClick={() => count.value++}
-        >
-          +
-        </button>
+        />
         <div class="counter-value">{count.value}</div>
         <button
           type="button"
           class="decrement-button"
           onClick={() => count.value--}
-        >
-          -
-        </button>
+        />
       </div>
     </div>
   );

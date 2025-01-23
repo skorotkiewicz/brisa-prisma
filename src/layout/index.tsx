@@ -1,9 +1,10 @@
 import Nav from "@/components/navigation";
 import Footer from "@/components/footer";
 
-import "@/styles/style.css";
-import "@/styles/nav.css";
-import "@/styles/footer.css";
+/* FIXME */
+// import "@/styles/style.css";
+// import "@/styles/nav.css";
+// import "@/styles/footer.css";
 
 export default function Layout({ children }: { children: JSX.Element }) {
   return (
@@ -22,6 +23,12 @@ export default function Layout({ children }: { children: JSX.Element }) {
           href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
           rel="stylesheet"
         />
+
+        {/* FIXME */}
+        <link href="/assets/style.css" rel="stylesheet" />
+        <link href="/assets/nav.css" rel="stylesheet" />
+        <link href="/assets/footer.css" rel="stylesheet" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
