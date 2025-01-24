@@ -28,6 +28,12 @@ bun build
 bun start
 ```
 
+## jj
+- `jj git remote add origin git@github.com:skorotkiewicz/brisa-prisma.git`
+- `jj bookmark set main`
+- `jj commit -m "first commit"`
+- `jj git push --allow-new`
+
         <button
           type="button"
           onDblClick={() => {
